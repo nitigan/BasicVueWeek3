@@ -4,52 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
    
     <title>Vue Test</title>
 </head>
 <body>
-    <div>
-        <h2>Name : </h2>
-        <h2>Input Name :<input type="text"></h2>
+    <div id="app">
+        <h2>Name : {{ text }}</h2>
+        <h2>Input Name :<input type="text"  v-model="text"></h2>
         <hr>
-        <h2> Your Age </h2>
-        <input type="button" value="add + ">
-        <input type="button" value="del - ">        
+        <h2> Your Age : {{ age }}</h2>
+        <input type="button" v-on:click="age+=1" value="add + ">
+        <input type="button" v-on:click="age-=1" value="del - ">        
         <hr>
         <h2>
-            อาหารที่ชอบ :
+            อาหารที่ชอบ : {{ food }}
             <br>
             Food : 
-            <input type="checkbox"  value="หมูปิ้ง"><label>หมูปิ้ง</label>
-            <input type="checkbox"  value="กระเพรา"><label>กระเพรา</label>
-            <input type="checkbox"  value="มาม่า"><label>มาม่า</label>
+            <input type="checkbox"  value="หมูปิ้ง" v-model="food"><label>หมูปิ้ง</label>
+            <input type="checkbox"  value="กระเพรา" v-model="food"><label>กระเพรา</label>
+            <input type="checkbox"  value="มาม่า" v-model="food"><label>มาม่า</label>
         </h2>
         <hr>
         <h2>
-                เพศ :
+                เพศ : {{gender}}
                 <br>
                 เลือกเพศ : 
-                <input type="radio"  value="ชาย"><label>ชาย</label>
-                <input type="radio"  value="หญิง"><label>หญิง</label>
-                <input type="radio" value="ไม่ระบุ"><label>ไม่ระบุ</label>
+                <input type="radio"  value="ชาย" v-model="gender"><label>ชาย</label>
+                <input type="radio"  value="หญิง" v-model="gender"><label>หญิง</label>
+                <input type="radio" value="ไม่ระบุ" v-model="gender" ><label>ไม่ระบุ</label>
         </h2>
         <hr>
         <h2>
-                อาชีพ : 
+                อาชีพ : {{a}}
                 <br>
                 เลือกอาชีพ : 
-                <select >
-                    <option>  Programmer</option>
-                    <option>  Engineer</option>
-                    <option>  Teacher</option>
-                    <option>  Other</option>
+                <select v-model="a">
+                    <option value="Programmer">  Programmer</option>
+                    <option value="Engineer">  Engineer</option>
+                    <option value="Teacher">  Teacher</option>
+                    <option value="Other">  Other</option>
                 </select>
         </h2>
         <hr>
-        <input type="button"  value="Display Message">
-        <h1 >Click เพื่อแสดงข้อความ</h1>
-   
-    <script src="app.js"></script>
+        <input type="button" value="Display Message" v-on:click="show"> 
+        <h1 v-if="status">Click เพื่อแสดงข้อความ</h1>
+        
+   </div>
+    <script src="testApp.js"></script>
 
 
 </body>
