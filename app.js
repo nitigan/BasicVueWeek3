@@ -6,7 +6,7 @@ var app = new Vue({
       food:[],
       gender:'',
       work:'',
-      show:''
+      show:true
     },
       methods: {
         addAge: function () {
@@ -16,7 +16,7 @@ var app = new Vue({
             this.age = this.age-1
         },
         DisMessage: function () {
-            this.show = 'Click เพื่อแสดงข้อความ'
+            this.show =!this.show
         }
       }
   })
