@@ -1,0 +1,19 @@
+{
+  "name": "basicvueweek3",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000B\u0000a\u0000s\u0000i\u0000c\u0000V\u0000u\u0000e\u0000W\u0000e\u0000e\u0000k\u00003\u0000\r\u0000 \u0000",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kaow1234/BasicVueWeek3.git"
+  },
+  "author": "kaow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kaow1234/BasicVueWeek3/issues"
+  },
+  "homepage": "https://github.com/Kaow1234/BasicVueWeek3#readme"
+}

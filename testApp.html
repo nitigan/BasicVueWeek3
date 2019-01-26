@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,45 +9,58 @@
 </head>
 <body>
     <div>
-        <h2>Name : </h2>
-        <h2>Input Name :<input type="text"></h2>
+        <div id="app-1">
+        <h2>Name : {{ Inputname }}</h2>
+        <h2>Input Name :<input v-model="Inputname"></h2>
+        </div>
+
         <hr>
-        <h2> Your Age </h2>
-        <input type="button" value="add + ">
-        <input type="button" value="del - ">        
+        <div id="app-2">
+        <h2> Your Age {{ counter }}</h2>
+        <input type="button" value="add + " v-on:click="counter += 1">
+        <input type="button" value="del - " v-on:click="counter -= 1">   
+        </div>     
         <hr>
         <h2>
-            อาหารที่ชอบ :
+        <div id='app-3'>
+            อาหารที่ชอบ :{{ checkedNames }}
             <br>
             Food : 
-            <input type="checkbox"  value="หมูปิ้ง"><label>หมูปิ้ง</label>
-            <input type="checkbox"  value="กระเพรา"><label>กระเพรา</label>
-            <input type="checkbox"  value="มาม่า"><label>มาม่า</label>
+            <input type="checkbox"  value="หมูปิ้ง" v-model="checkedNames"><label>หมูปิ้ง</label>
+            <input type="checkbox"  value="กระเพรา" v-model="checkedNames"><label>กระเพรา</label>
+            <input type="checkbox"  value="มาม่า" v-model="checkedNames"><label>มาม่า</label>
+        </div>
         </h2>
         <hr>
         <h2>
-                เพศ :
+                <div id='app-4'>
+                เพศ : {{ picked }}
                 <br>
-                เลือกเพศ : 
-                <input type="radio"  value="ชาย"><label>ชาย</label>
-                <input type="radio"  value="หญิง"><label>หญิง</label>
-                <input type="radio" value="ไม่ระบุ"><label>ไม่ระบุ</label>
+                เลือกเพศ :  
+                <input type="radio"  value="ชาย" v-model="picked"><label>ชาย</label>
+                <input type="radio"  value="หญิง" v-model="picked"><label>หญิง</label>
+                <input type="radio" value="ไม่ระบุ" v-model="picked"><label>ไม่ระบุ</label>
+                </div>
         </h2>
         <hr>
         <h2>
-                อาชีพ : 
+                <div id='app-5'>
+                อาชีพ : {{ selected }}
                 <br>
                 เลือกอาชีพ : 
-                <select >
+                <select v-model="selected">
                     <option>  Programmer</option>
                     <option>  Engineer</option>
                     <option>  Teacher</option>
                     <option>  Other</option>
                 </select>
+                </div>
         </h2>
         <hr>
-        <input type="button"  value="Display Message">
-        <h1 >Click เพื่อแสดงข้อความ</h1>
+        <div id="app-6">
+        <input type="button"  value="Display Message" v-on:click="isHidden = !isHidden"> 
+        <h1 v-if="!isHidden">Click เพื่อแสดงข้อควา</h1>
+        </div>
    
     <script src="app.js"></script>
 
